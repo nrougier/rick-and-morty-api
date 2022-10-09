@@ -2,7 +2,7 @@ const mainSection = document.querySelector(".main-section");
 let contenido = document.getElementById("contenido");
 
 mainSection.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-danger")) {
+  if (e.target.classList.contains("btn-dark")) {
     fetchApi();
   }
   e.stopPropagation();
@@ -17,7 +17,7 @@ function fetchApi() {
     .then((data) => {
       console.log(data);
       contenido.innerHTML += `
-        <div class="card p-1 m-1 row" style="width: 18rem;">
+        <div class="card p-1 m-3 row" style="width: 18rem;">
           <img src="${data.results[mathId].image}" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">${data.results[mathId].name}</h5>
